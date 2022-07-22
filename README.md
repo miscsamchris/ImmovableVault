@@ -2,10 +2,10 @@
  A Secure File Storage, Bookmarking and Sharing application Powered by Unstoppable Domains
 
 ## Mission Statement:
-     An One-stop shop solution to store files and share them securely in a single platform.
+An One-stop shop solution to store files and share them securely in a single platform.
 
 ## Solution:
-    Immovable Vault is a full stack, loosely coupled application that can be used to store files, Bookmark them and provide temporary access.
+Immovable Vault is a full stack, loosely coupled application that can be used to store files, Bookmark them and provide temporary access.
 
 ## Instructions
 ### Backend
