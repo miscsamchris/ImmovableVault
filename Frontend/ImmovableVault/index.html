@@ -1,0 +1,199 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #main-content {
+      display: none;
+    }
+  </style>
+  <title>Immovable Vault</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">IMMOVABLE <span style="color:red">VAULT</span></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li><a id="Login">Login with Unstoppable</a></li>
+        <li><a id="Logout">Logout</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <p id="message">
+
+  </p>
+  <div class="modal" id="CreateReferral">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Complete Registration</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-row">
+              <div class="col">
+                <input required type="text" class="form-control mb-2 mr-sm-2" id="UserName"
+                  placeholder="Enter User Name" name="UserName">
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <div class="col">
+                <input required type="text" class="form-control mb-2 mr-sm-2" id="UserEmail"
+                  placeholder="Enter User Email" name="UserEmail">
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <div class="col">
+                <input required type="password" class="form-control mb-2 mr-sm-2" id="UserPassword"
+                  placeholder="Enter User Password" name="UserPassword">
+              </div>
+            </div>
+            <br>
+
+            <div class="form-row">
+              <div class="col">
+                <input type="button" class="btn btn-primary mb-3 mr-sm-2" value="Register" id="RegisterUser"
+                  style="width: 100%;">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="main-content">
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="card">
+          <h3> Upload Document</h3>
+          <div class="card-body">
+            <form enctype="multipart/form-data">
+              <div class="form-row">
+                <div class="col">
+                  <input required type="text" class="form-control mb-2 mr-sm-2" id="document_name"
+                    placeholder="Enter Document Name" name="document_name">
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col">
+                  <label for="access_type">Document Type</label>
+                  <select class="form-control mb-2 mr-sm-2" name="document_type" id="document_type">
+                    <option value="Dropbox">Dropbox</option>
+                    <option value="GDrive">GDrive </option>
+                    <option value="Upload">Upload File </option>
+                  </select>
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col">
+                  <input required type="text" class="form-control mb-2 mr-sm-2" id="document_path"
+                    placeholder="Enter Document URL" name="document_path">
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col">
+                  <input required type="file" class="form-control mb-2 mr-sm-2" id="Document"
+                    placeholder="Enter Document File" name="Document">
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                <div class="col">
+                  <input type="button" class="btn btn-primary mb-3 mr-sm-2" value="Add Document" id="CreateDocument"
+                    style="width: 100%;">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3> My Documents</h3>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>File Name</th>
+                <th>File URL</th>
+                <th>Actions </th>
+              </tr>
+            </thead>
+            <tbody id="UserDocuments">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="ShareDocument">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Share Document</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-row">
+              <div class="col">
+                <input required type="hidden" class="form-control mb-2 mr-sm-2" id="document_id" name="document_id">
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <div class="col">
+                <label for="access_type">Access Type</label>
+                <select class="form-control mb-2 mr-sm-2" name="access_type" id="access_type">
+                  <option value="3600">1 Hour</option>
+                  <option value="86400">1 Day </option>
+                  <option value="2592000">1 Month</option>
+                </select>
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <div class="col">
+                <input required type="text" class="form-control mb-2 mr-sm-2" id="access_to_id"
+                  placeholder="Enter Unstoppable Domain ID" name="access_to_id">
+              </div>
+            </div>
+            <br>
+
+            <div class="form-row">
+              <div class="col">
+                <input type="button" class="btn btn-primary mb-3 mr-sm-2" value="Share" id="CreateAccess"
+                  style="width: 100%;">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "immovablevault",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "parcel": "^2.6.2"
+  },
+  "dependencies": {
+    "@uauth/js": "^2.0.0",
+    "jquery": "^3.6.0",
+    "jsdom": "^20.0.0"
+  }
+}
